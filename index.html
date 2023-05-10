@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="mt-3">Quản lý tuyển sinh</h2>
+    <form>
+      <label for="exampleFormControlSelect2">Điểm Chuẩn</label>
+      <input type="number" class="form-control" id="diemchuan">
+      <label for="exampleFormControlSelect2">Chọn Khu Vực</label>
+      <ul>
+        <li class="type">
+          <input type="radio" name="selector" id="khuvuc0">
+          <label for="khuvuc0">khu vực không ưu tiên</label>
+          <div class="check"></div>
+        </li>
+
+        <li class="type">
+          <input type="radio" name="selector" id="A">
+          <label for="khuvucA">khu vực A</label>
+          <div class="check"></div>
+        </li>
+
+        <li class="type">
+          <input type="radio" name="selector" id="B">
+          <label for="khuvucB">khu vực B</label>
+          <div class="check"></div>
+        </li>
+
+        <li class="type">
+          <input type="radio" name="selector" id="C">
+          <label for="khuvucC">khu vực C</label>
+          <div class="check"></div>
+        </li>
+      </ul>
+      <label for="exampleFormControlSelect2">Chọn Đối Tượng</label>
+      <ul>
+        <li class="type">
+          <input type="radio" name="selector2" id="doituong0">
+          <label for="doituong0">đối tượng không ưu tiên</label>
+          <div class="check"></div>
+        </li>
+
+        <li class="type">
+          <input type="radio" name="selector2" id="1">
+          <label for="doituong1">đối tượng 1</label>
+          <div class="check"></div>
+        </li>
+
+        <li class="type">
+          <input type="radio" name="selector2" id="2">
+          <label for="doituong2">đối tượng 2</label>
+          <div class="check"></div>
+        </li>
+
+        <li class="type">
+          <input type="radio" name="selector2" id="3">
+          <label for="doituong3">đối tượng 3</label>
+          <div class="check"></div>
+        </li>
+      </ul>
+      <label id="diemmon1" for="exampleFormControlSelect2">Điểm Môn 1</label>
+      <input type="number" class="form-control" id="mon1">
+
+      <label id="diemmon2" for="exampleFormControlSelect2">Điểm Môn 2</label>
+      <input type="number" class="form-control" id="mon2">
+
+      <label id="diemmon3" for="exampleFormControlSelect2">Điểm Môn 3</label>
+      <input type="number" class="form-control" id="mon3">
+
+      <button onclick="main()" type="button" class="btn btn-danger md-3 mt-3" id="btnResult">Kết Quả</button>
+      <p class="mt-3" id="txtResult"></p>
+    </form>
+
+
+    <h2 class="mt-3">Tính Tiền Điện</h2>
+    <label>Nhập họ tên</label>
+    <input type="text" id="hovaten" class="form-control">
+    <label >Số Kw</label>
+    <input type="number" id="soKw" class="form-control">
+    <button onclick="main2()" type="button" class="btn btn-danger md-3 mt-3" id="btnResult2">Kết Quả</button>
+    <p class="mt-3" id="txtResult2"></p>
+
+
+    <h2 class="mt-3">Tính Thuế Thu Nhập Cá Nhân</h2>
+    <label>Nhập họ tên</label>
+    <input type="text" id="hovatenb3" class="form-control">
+    <label >Tổng thu nhập năm</label>
+    <input type="number" id="tongthunhap" class="form-control">
+    <label >Số người phụ thuộc</label>
+    <input type="number" id="songuoiphuthuoc" class="form-control">
+    <button onclick="main3()" type="button" class="btn btn-danger md-3 mt-3" id="btnResult3">Tính tiền thuế</button>
+    <p class="mt-3" id="txtResult3"></p>
+
+
+    <h2 class="mt-3">Tính Tiền Cáp</h2>
+    <label for="exampleFormControlSelect2">Chọn loại khách hàng</label>
+    <ul>
+      <li class="type">
+        <input type="radio" name="selectorb4" id="nhadan">
+        <label for="nhadan">Nhà Dân</label>
+        <div class="check"></div>
+      </li>
+
+      <li class="type">
+        <input type="radio" name="selectorb4" id="doanhnghiep">
+        <label for="doanhnghiep">Doanh Nghiệp</label>
+        <div class="check"></div>
+      </li>
+    </ul>
+    <label>Nhập mã khách hàng</label>
+    <input type="text" id="hovatenb4" class="form-control">
+    <label >Số kênh cao cấp</label>
+    <input type="number" id="kenhcaocap" class="form-control">
+    <label >Số kết nối</label>
+    <input type="number" id="ketnoi" class="form-control" placeholder="chỉ áp dụng với gói Doanh Nghiệp">
+    <button onclick="main4()" type="button" class="btn btn-danger md-3 mt-3" id="btnResult4">Tính tiền cáp</button>
+    <p class="mt-3" id="txtResult4"></p>
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./js/bt.js"></script>
+  <script src="./js/bt2.js"></script>
+  <script src="./js/bt3.js"></script>
+  <script src="./js/bt4.js"></script>
+</body>
+
+</html>
