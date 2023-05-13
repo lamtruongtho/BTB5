@@ -1,5 +1,5 @@
 function main4() {
-    var radionhadan = document.getElementById("nhadan")
+    var radionhadan = document.getElementById("nhadan").value
     var radiodoanhnghiep = document.getElementById("doanhnghiep")
     var kenhcaocap = document.getElementById("kenhcaocap").value
     var soketnoi = document.getElementById("ketnoi").value
